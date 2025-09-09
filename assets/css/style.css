@@ -1,0 +1,389 @@
+/* Globals*/
+:root {
+    --primary-background: #e0e7e3;
+}
+
+/* Overides */
+
+.navbar {
+    background-color: var(--primary-background) !important;
+}
+
+.nav-link.active {
+    color: #000 !important;
+    font-weight: bold;
+}
+
+/*  */
+
+body {
+    background: var(--primary-background);
+    /* color: #333; */
+    /* scroll-padding: 500px; */
+    scroll-behavior: smooth;
+}
+
+.my-section {
+    min-height: 90vh;
+}
+
+.home-section {
+    min-height: 100vh;
+}
+
+.scroll-section {
+    scroll-margin-top: 70px;
+}
+
+.stat-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border-top: 1px solid #ddd;
+    z-index: 999;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.bottom-nav .nav-link {
+    color: #6c757d;
+    font-size: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 0;
+    transition: color 0.3s ease;
+}
+
+.bottom-nav .nav-link i {
+    font-size: 1.4rem;
+    margin-bottom: 3px;
+}
+
+.bottom-nav .nav-link.active {
+    color: #0d6efd;
+    font-weight: 600;
+}
+
+
+@media (max-width: 768px) {
+    .bottom-nav {
+        display: block !important;
+    }
+
+    body {
+        padding-bottom: 56px;
+    }
+
+    #main-navbar {
+        display: none !important;
+    }
+}
+
+
+.counter {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #000;
+    margin: 0;
+}
+
+.stat-text {
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.2;
+    color: #555;
+    text-align: center;
+    padding-top: 8px;
+}
+
+.about-image {
+    text-align: right;
+}
+
+
+@media (max-width: 768px) {
+
+    .about-image {
+        text-align: center !important;
+    }
+
+
+}
+
+/* Skills Section */
+
+.skills-scroll {
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    margin-bottom: 1.5rem;
+    padding-bottom: .5rem;
+    margin-top: .5rem;
+    display: flex;
+    overflow: auto;
+}
+
+.skills-scroll>div {
+    padding-right: 1.5rem !important;
+    margin-top: 1.5rem !important;
+
+}
+
+.skill-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+}
+
+.skill-card {
+    text-align: center;
+    padding: 1rem;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+    transition: 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Home Section */
+
+.btn-image {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 50%
+}
+
+.btn-image img {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%
+}
+
+.btn-image:hover {
+    transition: transform 0.3s;
+    transform: translateY(-4px);
+    transform: scale(1.1);
+    border-radius: 50%
+}
+
+/* Contact Me */
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 28px;
+    text-decoration: none !important;
+    color: black !important;
+}
+
+.contact-info>i {
+    margin-right: 12px;
+    font-size: 28pt;
+    font-weight: bold;
+}
+
+.contact-info>div>span {
+    font-size: 16pt;
+}
+
+form label {
+    font-size: 16pt;
+}
+
+form input {
+    height: 60px;
+    line-height: 60px;
+    padding-top: 5px;
+    box-sizing: border-box;
+    font-size: 16pt;
+}
+
+form textarea {
+    padding-top: 5px;
+    box-sizing: border-box;
+}
+
+form button {
+    height: 60px;
+    font-weight: bold !important;
+    font-style: 18pt !important;
+}
+
+.contact-info-divider {
+    background-color: #a6a6a6;
+    width: 1px;
+    max-width: 1px;
+    padding: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+@media (max-width: 768px) {
+    .contact-info-divider {
+        width: 90vw;
+        max-width: unset;
+        height: 1px;
+    }
+
+    .contact-info>div>span {
+        font-size: 12pt;
+    }
+
+    .about-image {
+        text-align: center !important;
+    }
+
+
+}
+
+/* Timeline */
+
+#timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.timeline-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 12px;
+    background: #0d6efd;
+    transform: translateX(-50%);
+    z-index: 1;
+    border-radius: 10px;
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 1.5rem;
+}
+
+.timeline-item.left {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-item.right {
+    left: 50%;
+}
+
+.timeline-item .content {
+    background: #f8f9fa;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.timeline-circle {
+    width: 30px;
+    height: 30px;
+    background-color: #0d6efd;
+    position: absolute;
+    border-radius: 50%;
+    z-index: 3;
+    justify-items: center;
+    justify-self: center;
+    align-content: center;
+}
+
+.timeline-circle div {
+    background-color: var(--primary-background);
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+
+}
+
+.timeline-circle-right {
+    right: -15px;
+
+}
+
+.timeline-circle-left {
+    left: -15px;
+
+}
+
+
+@media (max-width: 768px) {
+
+    /* Responsive stacking*/
+
+    .timeline-item,
+    .timeline-item.right,
+    .timeline-item.left {
+        width: 90%;
+        left: 25px;
+        text-align: left;
+    }
+
+    .timeline-line {
+        left: 20px;
+        transform: none;
+    }
+
+    .timeline-circle-right {
+        right: unset;
+        left: -15px;
+    }
+
+}
+
+/*  */
+
+.clickable-card {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.clickable-card:hover {
+    transform: scale(1.02);
+    background-color: #f8f9fa;
+}
+
+.card-text {
+    min-height: 144px;
+}
+
+/* Footer Social Icons */
+
+footer .social-icon {
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+footer .social-icon i {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+footer .social-icon:hover i {
+    transform: scale(1.3);
+}
