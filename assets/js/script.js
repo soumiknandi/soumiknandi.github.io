@@ -1,4 +1,4 @@
-// Example starter JavaScript for disabling form submissions if there are invalid fields
+// Contact Form Validation
 const validateForm = () => {
     'use strict'
 
@@ -18,111 +18,52 @@ const validateForm = () => {
             }, false)
         })
 }
-// Github stuff below
 
-const repos_list = [
-    'ulauncher stream anime', 'terraform tutorial',
-    'spring microservice', 'node-mysql-html-docker',
-    'FENCE INSTALLATION DEVICE'
-]
-
-const getGithubData = () => {
-    fetch('./github.json')
-        .then(res => res.json())
-        .then(data => showGithubData(data));
-}
-
-const getGithubRepoLang = async (url) => {
-    const res = await fetch(url);
-    const data = await res.json();
-    return data;
-}
-
-const showGithubData = (repos) => {
-    const repoList = document.getElementById('repo-list');
+window.addEventListener("load", () => validateForm());
 
 
-    repos_list.forEach(r => {
-
-
-        let repo = repos.find(f => f.name.toLowerCase() === r.toLowerCase())
-
-        const col = document.createElement('div');
-        col.className = 'col-md-4 mt-4';
-
-        // console.log(repo)
-        col.innerHTML = `
-          <div class="card h-100 shadow-sm clickable-card" onclick="window.open('${repo.html_url}', '_blank')">
-            <div class="card-body">
-              <h5 class="card-title">
-                ${repo.name}
-              </h5>
-              <p class="card-text">${repo.description || 'No description provided.'}</p>
-            </div>
-            <div class="card-footer d-flex justify-content-between align-items-center">
-            <small class="text-muted"> ${repo.stargazers_count !== null ? "⭐ " + repo.stargazers_count : ""}</small>
-            <small class="text-muted"><b>${repo.language || 'Unknown'}</b> | ${repo.type}</small>
-            </div>
-          </div>
-
-        `;
-        repoList.appendChild(col);
-
-    })
-
-
-}
-
-const tranposeData = () => {
-    aaa.map(a => { return { name: a.name, html_url: a.html_url, description: a.description, language: a.language, stargazers_count: a.stargazers_count } })
-}
-
-// Onload function
-window.onload = function () {
-
-
-
-    validateForm();
-    getGithubData();
-
+// Counter
+const options = {
+    root: null, // Observe against the viewport
+    rootMargin: '0px',
+    threshold: 0.5 // Trigger when 50% of the div is visible
 };
 
+const observerCb = (entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const counters = document.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+                    const increment = target / 1300; // adjust speed
+
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + increment);
+                        setTimeout(updateCount, 20);
+                    } else {
+                        counter.innerText = target + " +";
+                    }
+                };
+                updateCount();
+            });
+            observer.unobserve(entry.target)
+        }
+    });
+}
+
+const observer = new IntersectionObserver(observerCb, options);
+observer.observe(document.getElementById('counter'));
 
 
-document.getElementById("year").textContent = new Date().getFullYear();
 
+// Top & bottom navbar 
 const sections = Array.from(document.getElementsByClassName("scroll-section"));
 const navLinks = Array.from(document.querySelectorAll("#main-navbar .nav-link"));
 const bottomNavLinks = Array.from(document.querySelectorAll("#bottom-nav .nav-link"));
 
-
-
-
 window.addEventListener("scroll", () => {
-
-
-
-    const counters = document.querySelectorAll('.counter');
-    let countersAnimated = false;
-
-    const animateCounters = () => {
-        counters.forEach(counter => {
-            const updateCount = () => {
-                const target = +counter.getAttribute('data-target');
-                const count = +counter.innerText;
-                const increment = target / 1300; // adjust speed
-
-                if (count < target) {
-                    counter.innerText = Math.ceil(count + increment);
-                    setTimeout(updateCount, 20);
-                } else {
-                    counter.innerText = target;
-                }
-            };
-            updateCount();
-        });
-    };
-
 
     let current = "";
 
@@ -138,7 +79,6 @@ window.addEventListener("scroll", () => {
         if (link.getAttribute("href") === `#${current}`) {
             link.classList.add("active");
         }
-        // console.log(link.getAttribute("href"), `#${current}`)
     });
 
     bottomNavLinks.forEach(link => {
@@ -148,18 +88,57 @@ window.addEventListener("scroll", () => {
         }
     });
 
-
-    if (current === "about" && !countersAnimated) {
-
-        countersAnimated = true;
-        animateCounters();
-    }
-
-
-
-
-
-
 });
 
 
+
+// Left Right scroll button for skills
+document.querySelectorAll(".skills-scroll-wrapper").forEach(wrapper => {
+    const scrollContainer = wrapper.querySelector(".skills-scroll");
+    const leftBtn = wrapper.querySelector(".scroll-btn.left");
+    const rightBtn = wrapper.querySelector(".scroll-btn.right");
+
+    function updateButtons() {
+        const scrollLeft = Math.round(scrollContainer.scrollLeft);
+        const maxScroll = Math.round(scrollContainer.scrollWidth - scrollContainer.clientWidth);
+
+
+        if (scrollContainer.scrollWidth <= scrollContainer.clientWidth) {
+            // No overflow → hide both
+            leftBtn.classList.add("hidden");
+            rightBtn.classList.add("hidden");
+        } else {
+            // Overflow exists → check positions
+            if (scrollLeft <= 0) {
+                leftBtn.classList.add("inactive");
+            } else {
+                leftBtn.classList.remove("hidden");
+                leftBtn.classList.remove("inactive");
+            }
+
+            if (scrollLeft >= maxScroll) {
+                rightBtn.classList.add("inactive");
+            } else {
+                rightBtn.classList.remove("hidden");
+                rightBtn.classList.remove("inactive");
+            }
+        }
+    }
+
+    function smoothScrollBy(amount) {
+        scrollContainer.scrollBy({ left: amount, behavior: "smooth" });
+        setTimeout(updateButtons, 400);
+    }
+
+    leftBtn.addEventListener("click", () => smoothScrollBy(-250));
+    rightBtn.addEventListener("click", () => smoothScrollBy(250));
+    scrollContainer.addEventListener("scroll", updateButtons);
+    window.addEventListener("resize", updateButtons);
+
+    window.addEventListener("load", () => setTimeout(updateButtons, 500));
+});
+
+
+
+// Footer
+document.getElementById("year").textContent = new Date().getFullYear();

@@ -14,14 +14,15 @@
     font-weight: bold;
 }
 
-/*  */
-
 body {
     background: var(--primary-background);
     /* color: #333; */
     /* scroll-padding: 500px; */
     scroll-behavior: smooth;
 }
+
+/* Sections */
+
 
 .my-section {
     min-height: 90vh;
@@ -35,12 +36,9 @@ body {
     scroll-margin-top: 70px;
 }
 
-.stat-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
+
+/* Navbar */
 
 .bottom-nav {
     position: fixed;
@@ -90,11 +88,42 @@ body {
 }
 
 
+/* Home Section */
+
+.btn-image {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 50%
+}
+
+.btn-image img {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%
+}
+
+.btn-image:hover {
+    transition: transform 0.3s;
+    transform: translateY(-4px);
+    transform: scale(1.1);
+    border-radius: 50%
+}
+
+/* About Section */
+
+
+
 .counter {
     font-size: 2rem;
     font-weight: 700;
     color: #000;
     margin: 0;
+}
+
+.stat-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .stat-text {
@@ -117,10 +146,69 @@ body {
         text-align: center !important;
     }
 
+    .counter-wrapper {
+        justify-content: center;
+    }
+
+    #contactbtn {
+        width: 90%;
+    }
+
+    .contactbtn-wrapper {
+        display: flex;
+        justify-content: center;
+    }
 
 }
 
 /* Skills Section */
+
+.skills-scroll-wrapper {
+    position: relative;
+}
+
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    color: #444444;
+    font-size: 2rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    align-items: center;
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-btn.left {
+    left: -40px;
+}
+
+.scroll-btn.right {
+    right: -40px;
+}
+
+.scroll-btn:hover {
+    background: rgba(13, 110, 253, 0.2);
+}
+
+.scroll-btn.inactive:hover {
+    background: transparent;
+}
+
+.scroll-btn.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.scroll-btn.inactive {
+    color: #858585;
+}
 
 .skills-scroll {
     scrollbar-width: none;
@@ -159,99 +247,16 @@ body {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
-/* Home Section */
-
-.btn-image {
-    display: inline-flex;
-    align-items: center;
-    border-radius: 50%
-}
-
-.btn-image img {
-    width: 68px;
-    height: 68px;
-    border-radius: 50%
-}
-
-.btn-image:hover {
-    transition: transform 0.3s;
-    transform: translateY(-4px);
-    transform: scale(1.1);
-    border-radius: 50%
-}
-
-/* Contact Me */
-
-.contact-info {
-    display: flex;
-    align-items: center;
-    margin-bottom: 28px;
-    text-decoration: none !important;
-    color: black !important;
-}
-
-.contact-info>i {
-    margin-right: 12px;
-    font-size: 28pt;
-    font-weight: bold;
-}
-
-.contact-info>div>span {
-    font-size: 16pt;
-}
-
-form label {
-    font-size: 16pt;
-}
-
-form input {
-    height: 60px;
-    line-height: 60px;
-    padding-top: 5px;
-    box-sizing: border-box;
-    font-size: 16pt;
-}
-
-form textarea {
-    padding-top: 5px;
-    box-sizing: border-box;
-}
-
-form button {
-    height: 60px;
-    font-weight: bold !important;
-    font-style: 18pt !important;
-}
-
-.contact-info-divider {
-    background-color: #a6a6a6;
-    width: 1px;
-    max-width: 1px;
-    padding: 0;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
 
 @media (max-width: 768px) {
-    .contact-info-divider {
-        width: 90vw;
-        max-width: unset;
-        height: 1px;
-    }
 
-    .contact-info>div>span {
-        font-size: 12pt;
+    .scroll-btn {
+        display: none;
     }
-
-    .about-image {
-        text-align: center !important;
-    }
-
 
 }
 
-/* Timeline */
+/* My Journey */
 
 #timeline {
     position: relative;
@@ -354,7 +359,8 @@ form button {
 
 }
 
-/*  */
+
+/* Project Sections */
 
 .clickable-card {
     cursor: pointer;
@@ -368,6 +374,77 @@ form button {
 
 .card-text {
     min-height: 144px;
+}
+
+/* Contact Me */
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 28px;
+    text-decoration: none !important;
+    color: black !important;
+}
+
+.contact-info>i {
+    margin-right: 12px;
+    font-size: 28pt;
+    font-weight: bold;
+}
+
+.contact-info>div>span {
+    font-size: 16pt;
+}
+
+form label {
+    font-size: 16pt;
+}
+
+form input {
+    height: 60px;
+    line-height: 60px;
+    padding-top: 5px;
+    box-sizing: border-box;
+    font-size: 16pt;
+}
+
+form textarea {
+    padding-top: 5px;
+    box-sizing: border-box;
+}
+
+form button {
+    height: 60px;
+    font-weight: bold !important;
+    font-style: 18pt !important;
+}
+
+.contact-info-divider {
+    background-color: #a6a6a6;
+    width: 1px;
+    max-width: 1px;
+    padding: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+@media (max-width: 768px) {
+    .contact-info-divider {
+        width: 90vw;
+        max-width: unset;
+        height: 1px;
+    }
+
+    .contact-info>div>span {
+        font-size: 12pt;
+    }
+
+    .about-image {
+        text-align: center !important;
+    }
+
+
 }
 
 /* Footer Social Icons */
