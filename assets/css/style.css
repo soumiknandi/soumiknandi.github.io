@@ -1,24 +1,91 @@
-/* Globals*/
+/* Globals */
 :root {
-    --primary-background: #e0e7e3;
+
+    --bg: #F9F9F9;
+    --text: #252526;
+    --muted: #7A7A7A;
+    --card-bg: #ffffff;
+    --card-border: #E0E0E0;
+    --primary-accent: #01acc3;
+    /* 00BCD4 */
+
+    --nav-bg: #F9F9F9;
+    --footer-bg: #252526;
 }
 
-/* Overides */
+/* Dark theme overrides */
+:root[data-theme="dark"] {
+    --bg: #1A0A2A;
+    --text: #F0F4F7;
+    --muted: #C0B7D1;
+    --card-bg: #28143C;
+    --card-border: rgba(255, 51, 204, 0.15);
+    /* Border uses a hint of the accent color */
+    --nav-bg: #1A0A2A;
+    --footer-bg: #201133;
+    --primary-accent: #FF33CC;
+    --bs-secondary-color: #adb5bd;
+    --bs-nav-link-color: #e6eef8;
+}
 
-.navbar {
-    background-color: var(--primary-background) !important;
+.btn {
+    color: var(--bg);
+}
+
+/* Body */
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background-color .3s ease, color .3s ease;
+    scroll-behavior: smooth;
+}
+
+/* Common */
+
+.card {
+    background-color: var(--card-bg);
+    border-color: var(--card-border);
+    color: var(--text);
+}
+
+footer {
+    background-color: var(--footer-bg) !important;
+    color: var(--muted);
+}
+
+button {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    background-color: var(--primary-accent) !important;
+    border-color: var(--primary-accent) !important;
+}
+
+
+/* Navbar */
+
+.navbar,
+.bg-body-tertiary {
+    background-color: var(--nav-bg) !important;
+}
+
+.navbar-brand {
+    /* font-weight: bold; */
+    color: var(--text) !important;
+    transition: color 0.3s ease;
+}
+
+.nav-link {
+    color: var(--muted) !important;
+    transition: color 0.3s ease;
 }
 
 .nav-link.active {
-    color: #000 !important;
+    color: var(--text) !important;
     font-weight: bold;
 }
 
-body {
-    background: var(--primary-background);
-    /* color: #333; */
-    /* scroll-padding: 500px; */
-    scroll-behavior: smooth;
+#theme-toggle {
+    line-height: 1;
+    padding: 0.35rem 0.6rem;
 }
 
 /* Sections */
@@ -38,15 +105,14 @@ body {
 
 
 
-/* Navbar */
+/* Bottom Navbar */
 
 .bottom-nav {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    background: #fff;
-    border-top: 1px solid #ddd;
+    background: var(--nav-bg);
     z-index: 999;
     padding-left: 8px;
     padding-right: 8px;
@@ -71,6 +137,57 @@ body {
     color: #0d6efd;
     font-weight: 600;
 }
+
+.theme-toggle-mobile {
+    position: fixed;
+    right: 16px;
+    top: 72px;
+    /* sits above bottom-nav */
+    z-index: 1100;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    transition: transform .12s ease, background-color .2s ease;
+    background-color: var(--primary-accent);
+    color: var(--bg);
+    border: none !important;
+}
+
+
+/* show on small screens */
+@media (max-width: 768px) {
+    .theme-toggle-mobile {
+        display: flex;
+    }
+
+    /* move a bit up on very small screens if bottom-nav present */
+    /* @media (max-width: 400px) {
+        .theme-toggle-mobile {
+            right: 12px;
+            bottom: 80px;
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+        }
+    } */
+}
+
+.theme-toggle-mobile:active {
+    transform: scale(.96);
+}
+
+/* keep existing desktop toggle as-is; if you want hide it on mobile explicitly:
+@media (max-width: 768px) {
+    #theme-toggle {
+        display: none !important;
+    }
+} */
 
 
 @media (max-width: 768px) {
@@ -114,10 +231,30 @@ body {
     text-align: center;
 }
 
+.home-social-icon {
+    font-size: 64px;
+    color: var(--text);
+}
+
+.home-social-icon:hover {
+    color: var(--primary-accent);
+    transition: color 0.3s ease;
+    transform: scale(1.3);
+
+}
+
+#downloadcvbtn,
+#contactbtn {
+    height: 56px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
 
 @media (max-width: 768px) {
 
-    #downloadcvbtn {
+    #downloadcvbtn,
+    #contactbtn {
         width: 90%;
     }
 
@@ -160,7 +297,7 @@ body {
 .counter {
     font-size: 2rem;
     font-weight: 700;
-    color: #000;
+    color: var(--text);
     margin: 0;
 }
 
@@ -174,7 +311,7 @@ body {
     font-size: 0.9rem;
     margin: 0;
     line-height: 1.2;
-    color: #555;
+    color: var(--text);
     text-align: center;
     padding-top: 8px;
 }
@@ -216,8 +353,8 @@ body {
     top: 50%;
     transform: translateY(-50%);
     border: none;
-    background: transparent;
-    color: #444444;
+    background: transparent !important;
+    color: var(--primary-accent);
     font-size: 2rem;
     width: 40px;
     height: 40px;
@@ -251,7 +388,7 @@ body {
 }
 
 .scroll-btn.inactive {
-    color: #858585;
+    color: var(--muted);
 }
 
 .skills-scroll {
@@ -281,9 +418,11 @@ body {
     text-align: center;
     padding: 1rem;
     border-radius: 8px;
-    background: #fff;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
     transition: 0.3s ease;
+    background-color: var(--card-bg);
+    border-color: var(--card-border);
+    color: var(--text);
 }
 
 .skill-card:hover {
@@ -318,7 +457,7 @@ body {
     bottom: 0;
     left: 50%;
     width: 12px;
-    background: #0d6efd;
+    background: var(--primary-accent);
     transform: translateX(-50%);
     z-index: 1;
     border-radius: 10px;
@@ -340,18 +479,21 @@ body {
 }
 
 .timeline-item .content {
-    background: #f8f9fa;
+    /* background: #f8f9fa; */
     padding: 1rem 1.5rem;
     border-radius: 8px;
     position: relative;
     z-index: 2;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    background-color: var(--card-bg);
+    border-color: var(--card-border);
+    color: var(--text);
 }
 
 .timeline-circle {
     width: 30px;
     height: 30px;
-    background-color: #0d6efd;
+    background-color: var(--primary-accent);
     position: absolute;
     border-radius: 50%;
     z-index: 3;
@@ -361,7 +503,7 @@ body {
 }
 
 .timeline-circle div {
-    background-color: var(--primary-background);
+    background-color: var(--primary-accent);
     width: 14px;
     height: 14px;
     border-radius: 50%;
@@ -407,13 +549,13 @@ body {
 /* Project Sections */
 
 .clickable-card {
+    background-color: var(--card-bg);
     cursor: pointer;
     transition: transform 0.2s ease;
 }
 
 .clickable-card:hover {
     transform: scale(1.02);
-    background-color: #f8f9fa;
 }
 
 .card-text {
@@ -427,7 +569,7 @@ body {
     align-items: center;
     margin-bottom: 28px;
     text-decoration: none !important;
-    color: black !important;
+    color: var(--text) !important;
 }
 
 .contact-info>i {
