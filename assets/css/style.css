@@ -109,6 +109,50 @@ body {
     border-radius: 50%
 }
 
+.top-text-hi {
+    display: none;
+    text-align: center;
+}
+
+
+@media (max-width: 768px) {
+
+    #downloadcvbtn {
+        width: 90%;
+    }
+
+    .downloadcvbtn-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    .social-link-wrapper {
+        justify-content: center;
+    }
+
+    .social-link-wrapper a {
+        margin-left: 12px;
+        margin-right: 12px;
+    }
+
+    .top-text {
+        display: none;
+    }
+
+    .top-text-hi {
+        display: block;
+    }
+
+    .top-title {
+        text-align: center;
+    }
+
+    .top-desc {
+        text-align: center;
+    }
+
+}
+
 /* About Section */
 
 

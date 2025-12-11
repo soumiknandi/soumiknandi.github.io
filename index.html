@@ -90,23 +90,26 @@
                 <svg style="width: 660px;" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink">
                     <mask id="blobMask">
-                        <path transform="translate(0, 0) scale(1, 1)" fill="white"
-                            d="M432,307Q424,374,361,395.5Q298,417,232,442Q166,467,122,412.5Q78,358,51,299Q24,240,53.5,183Q83,126,127,77.5Q171,29,242,22Q313,15,369.5,60Q426,105,433,172.5Q440,240,432,307Z" />
+                        <path fill="white"
+                            d="M 380 335 Q 350 430 246 420 Q 142 410 80 325 Q 18 240 66 147 Q 131 -8 248 2 Q 392 22 406 134 Q 410 240 380 335 Z" />
                     </mask>
-                    <image width="480" height="480" mask="url(#blobMask)" href="./assets/images/pp.jpg" />
+                    <image width="480" height="480" mask="url(#blobMask)" href="./assets/images/profile-picture.jpg" />
                 </svg>
 
                 <div class="col-sm d-flex align-items-center">
-                    <div class="">
+                    <div>
                         <!-- Top Part -->
-                        <h1><b style="font-size: 40pt">Hi, I'm Soumik</b></h1>
-                        <h5>DevOps and Java Developer</h5>
-                        <p style="font-size: 14pt; max-width: 480px;">I'm a DevOps & Java Developer passionate about
+                        <h1 class="top-text"><b style="font-size: 40pt">Hi, I'm Soumik</b></h1>
+                        <h1 class="top-text-hi"><b style="font-size: 40pt">Hi,</b></h1>
+                        <h1 class="top-text-hi"><b style="font-size: 40pt">I'm Soumik</b></h1>
+                        <h5 class="top-title">DevOps and Java Developer</h5>
+                        <p class="top-desc" style="font-size: 14pt; max-width: 480px;">I'm a DevOps & Java Developer
+                            passionate about
                             building scalable applications and streamlining development workflows.
                         </p>
 
                         <!-- Social Links -->
-                        <div class="col mt-4">
+                        <div class="d-flex mt-4 social-link-wrapper">
                             <a class="btn p-0 me-2 border-0 btn-image" target="_blank"
                                 href="https://www.linkedin.com/in/soumiknandi/">
                                 <img class="ratio ratio-1x1" src="./assets/icons/linkedin.png" alt="Linkedin Image">
@@ -124,9 +127,10 @@
                         </div>
 
 
-                        <div class="d-flex mt-4">
-                            <a style="text-decoration: none;" href="Soumik_Nandi_Resume.pdf" download>
-                                <button
+                        <div class="mt-4">
+                            <a class="downloadcvbtn-wrapper" style="text-decoration: none;"
+                                href="Soumik_Nandi_Resume.pdf" download>
+                                <button id="downloadcvbtn"
                                     style="background-color: #0d6efd; color: #fff; height: 56px; text-decoration: none;"
                                     class="btn btn-info d-flex align-items-center justify-content-center gap-2">
                                     Download My CV
@@ -420,7 +424,7 @@
                         <div class="content">
                             <h5 class="fw-bold">Software Engineering Analyst - Accenture</h5>
                             <small class="text-muted">September, 2022 – June, 2025</small>
-                            <p>Migrated Java & Spring based applications to new data center in lower environments,
+                            <p>Migrated Java and Spring based applications to new data center across all environments,
                                 ensuring zero business disruption and smooth transitions.</p>
                         </div>
                     </div>
@@ -434,8 +438,8 @@
                         <div class="content">
                             <h5 class="fw-bold">Software Engineering Associate - Accenture</h5>
                             <small class="text-muted">June, 2021 – September, 2022</small>
-                            <p>Upgraded Java & Spring based applications, automated deployments, and managed Linux
-                                environments.</p>
+                            <p>Upgraded Java and Spring applications, automated deployments using Jenkins, and
+                                managed Linux environments</p>
                         </div>
                     </div>
 
@@ -606,6 +610,65 @@
                             <div class="card-footer d-flex justify-content-between align-items-center">
                                 <small class="text-muted">⭐ 0</small>
                                 <small class="text-muted"><b>React Native</b> | MCA Minor Project</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mt-4">
+                        <div class="card h-100 shadow-sm clickable-card" onclick="window.open(
+                                'https\://github.com/soumiknandi/MeiChat', '_blank')">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    AWS Serverless Bulk Mailer
+                                </h5>
+                                <p class="card-text">
+                                    🚀 Serverless automation for bulk email delivery. As soon as csv file is uploaded to
+                                    S3, it will ⚡ trigger a lambda function which will send ✉️ mail to all the recipient
+                                    present in csv via SES.
+                                </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between align-items-center">
+                                <small class="text-muted">⭐ 0</small>
+                                <small class="text-muted"><b>Lambda • S3 • SES</b> | Personal Project</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mt-4">
+                        <div class="card h-100 shadow-sm clickable-card" onclick="window.open(
+                                'https\://github.com/soumiknandi/MeiChat', '_blank')">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    Database Migration — On-Prem to RDS
+                                </h5>
+                                <p class="card-text">
+                                    🗄️ Migrated MySQL databases from on-prem → RDS. Using SQL dump and Percona
+                                    XtraBackup via Amazon S3. 🔁 Performed live migration from EC2 to RDS using AWS DMS.
+                                </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between align-items-center">
+                                <small class="text-muted">⭐ 0</small>
+                                <small class="text-muted"><b>RDS • S3 • DMS</b> | Personal Project</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mt-4">
+                        <div class="card h-100 shadow-sm clickable-card" onclick="window.open(
+                                'https\://github.com/soumiknandi/MeiChat', '_blank')">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    Containerized App Deployment
+                                </h5>
+                                <p class="card-text">
+                                    🧩 Infrastructure created using Terraform (IaC) and deployed ☸️ Python application
+                                    on Kubernetes
+                                    (AWS EKS).
+                                </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between align-items-center">
+                                <small class="text-muted">⭐ 0</small>
+                                <small class="text-muted"><b>AWS EKS • Terraform • Python</b> | Personal Project</small>
                             </div>
                         </div>
                     </div>
