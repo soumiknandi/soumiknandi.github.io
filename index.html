@@ -6,10 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Soumik Nandi | DevOps & Java Developer</title>
 
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css?v=1.0" rel="stylesheet">
 
-    <!-- Flat Icons -->
+    <!-- Flaticon -->
     <link rel='stylesheet'
         href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css'>
@@ -23,29 +29,47 @@
 <body>
     <main class="container">
 
+        <!-- BOTTOM NAV BAR -->
         <nav id="bottom-nav" class="bottom-nav" style="display: none;">
             <ul class="nav justify-content-around mb-0">
                 <li class="nav-item col-1">
-                    <a href="#home" class="nav-link active"><i class="fi fi-rr-home"></i>Home</a>
+                    <a href="#home" class="nav-link active">
+                        <i class="fi fi-rr-home"></i>
+                        <span class="nav-label">Home</span>
+                    </a>
                 </li>
                 <li class="nav-item col-1">
-                    <a href="#about" class="nav-link"><i class="fi fi-rr-user"></i>About</a>
+                    <a href="#about" class="nav-link"><i class="fi fi-rr-user"></i>
+                        <span class="nav-label">About</span>
+                    </a>
                 </li>
                 <li class="nav-item col-1">
-                    <a href="#skills" class="nav-link"><i class="fi fi-rr-tools"></i>Skills</a>
+                    <a href="#skills" class="nav-link"><i class="fi fi-rr-tools"></i>
+                        <span class="nav-label">Skills</span>
+                    </a>
                 </li>
                 <li class="nav-item col-1">
-                    <a href="#experiences" class="nav-link"><i class="fi fi-rr-briefcase"></i>Experiences</a>
+                    <a href="#certification" class="nav-link"><i class="fi fi-rr-diploma"></i>
+                        <span class="nav-label">Certifications</span>
+                    </a>
                 </li>
                 <li class="nav-item col-1">
-                    <a href="#projects" class="nav-link"><i class="fi fi-rr-layers"></i>Projects</a>
+                    <a href="#experiences" class="nav-link"><i class="fi fi-rr-briefcase"></i>
+                        <span class="nav-label">Experiences</span>
+                    </a>
                 </li>
                 <li class="nav-item col-1">
-                    <a href="#contact" class="nav-link"><i class="fi fi-rr-envelope"></i>Contact</a>
+                    <a href="#projects" class="nav-link"><i class="fi fi-rr-layers"></i>
+                        <span class="nav-label">Projects</span>
+                    </a>
+                </li>
+                <li class="nav-item col-1">
+                    <a href="#contact" class="nav-link"><i class="fi fi-rr-envelope"></i>
+                        <span class="nav-label">Contact</span>
+                    </a>
                 </li>
             </ul>
         </nav>
-
 
         <!-- NAV BAR -->
         <nav id="main-navbar" class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
@@ -66,6 +90,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#skills">Skills</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#certification">Certifications</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#experiences">Experiences</a>
@@ -90,6 +117,7 @@
         </nav>
 
         <div>
+            <!-- Mobile theme switch button -->
             <button id="theme-toggle-mobile" class="btn btn-outline-secondary theme-toggle-mobile d-md-none"
                 aria-label="Toggle theme" title="Toggle theme">🌙</button>
 
@@ -154,11 +182,11 @@
                     <h1 class="text-center">About Me</h1>
                 </div>
 
-                <div class="col-md-5 about-image" style="padding-right: 28px;">
+                <!-- <div class="col-md-5 about-image" style="padding-right: 28px;">
                     <img src="./assets/images/pp.jpg" style="width: 80%; border-radius: 15px;" />
-                </div>
+                </div> -->
                 <!-- <div class="col-md-1"></div> -->
-                <div class="col-md-7">
+                <div class="col-md-10">
 
                     <p style="font-size: 14pt; line-height: 1.8; text-align: justify;" class="p-2">
                         I'm a DevOps and Java Developer with 4+ years of experience building, deploying, and maintaining
@@ -170,32 +198,34 @@
                     </p>
 
                     <!-- Counter -->
-                    <div id="counter" class="counter-wrapper d-flex g-4">
+                    <div id="counter" class="counter-wrapper d-flex g-4 justify-content-center mt-4">
                         <div class="col-md-2 col-3">
                             <div class="stat-box">
-                                <h3 class="counter" data-target="10">0</h3>
-                                <p class="stat-text">Projects Completed</p>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-3">
-                            <div class="stat-box">
-                                <h3 class="counter" data-target="5">0</h3>
-                                <p class="stat-text">Certifications</p>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-3">
-                            <div class="stat-box">
-                                <h3 class="counter" data-target="4">0</h3>
+                                <h3 class="counter" data-target="4" show-plus="true">0</h3>
                                 <p class="stat-text">Years Experience</p>
                             </div>
                         </div>
+
+                        <div class="col-md-2 col-3">
+                            <div class="stat-box">
+                                <h3 class="counter" data-target="40" show-plus="true">0</h3>
+                                <p class="stat-text">Applications Delivered</p>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-3">
+                            <div class="stat-box">
+                                <h3 class="counter" data-target="2">0</h3>
+                                <p class="stat-text">Certifications</p>
+                            </div>
+                        </div>
+
                     </div>
 
 
-                    <div class="mt-4">
-                        <a class="contactbtn-wrapper" style="text-decoration: none;" href="#contact">
+                    <div class="row mt-5 justify-content-center">
+                        <a style="text-decoration: none; display: contents;" href="#contact">
                             <button id="contactbtn"
-                                class="btn btn-info d-flex align-items-center justify-content-center gap-2">
+                                class="btn btn-info d-flex align-items-center justify-content-center gap-2 col-3">
                                 Contact Me
                                 <i class="fi fi-rr-paper-plane-top"></i>
                             </button>
@@ -398,6 +428,34 @@
 
             </div>
 
+            <!-- CERTIFICATION SECTION -->
+            <div id="certification"
+                class="row my-section align-content-start justify-content-around mb-3 scroll-section">
+                <h1 class="text-center">Certifications</h1>
+
+                <div class="row mt-1 justify-content-evenly">
+
+                    <div class="col-md-4 mt-4 text-center certifications-card"
+                        onclick="window.open(
+                                'https\://www.credly.com/badges/1ee34e94-0b20-4e16-928a-5f0793e0e026/public_url', '_blank')">
+                        <img src="./assets/images/aws-certified-solutions-architect-associate.png"
+                            class="certification-image col-6" alt="AWS Certified Solutions Architect – Associate" />
+                        <h5 class="mt-3">AWS Certified Solutions Architect – Associate</h5>
+                        <div class="text-muted">Issued: March, 2024</div>
+                    </div>
+
+                    <div class="col-md-4 mt-4 text-center certifications-card"
+                        onclick="window.open(
+                                'https\://learn.microsoft.com/en-us/users/soumiknandi-8501/credentials/5e858a2bbd548a30', '_blank')">
+                        <img src="./assets/images/github-copilot.svg" class="certification-image col-6"
+                            alt="GitHub Coilot" />
+                        <h5 class="mt-3">GitHub Coilot</h5>
+                        <div class="text-muted">Issued: December, 2025</div>
+                    </div>
+                </div>
+            </div>
+
+
             <!-- MY JOURNEY SECTION -->
             <div id="experiences" class="row my-section align-content-start justify-content-around mb-5 scroll-section">
                 <div style="padding-bottom: 40px;">
@@ -415,8 +473,8 @@
                         <div class="content">
                             <h5 class="fw-bold">Software Engineering Senior Analyst - Accenture</h5>
                             <small class="text-muted">June, 2025 – Present</small>
-                            <p>Developed Spring batch applications which automated data deletion, improved performance
-                                by implementing chunk processing, pagination and threading.</p>
+                            <p>Deployed applications to AWS using Spinnaker, implemented blue-green and canary
+                                deployments.</p>
                         </div>
                     </div>
 
@@ -429,8 +487,8 @@
                         <div class="content">
                             <h5 class="fw-bold">Software Engineering Analyst - Accenture</h5>
                             <small class="text-muted">September, 2022 – June, 2025</small>
-                            <p>Migrated Java and Spring based applications to new data center across all environments,
-                                ensuring zero business disruption and smooth transitions.</p>
+                            <p> Developed and migrated multiple Spring applications, deployed to AWS & private cloud via
+                                Jenkins and Spinaker.</p>
                         </div>
                     </div>
 
@@ -444,7 +502,7 @@
                             <h5 class="fw-bold">Software Engineering Associate - Accenture</h5>
                             <small class="text-muted">June, 2021 – September, 2022</small>
                             <p>Upgraded Java and Spring applications, automated deployments using Jenkins, and
-                                managed Linux environments</p>
+                                managed Linux environments.</p>
                         </div>
                     </div>
 
@@ -457,7 +515,7 @@
                         <div class="content">
                             <h5 class="fw-bold">Master of Computer Application (MCA)</h5>
                             <small class="text-muted">2018 – 2021</small>
-                            <p>Build patented project in Python.</p>
+                            <p>Developed patented project on wildlife convervation in Python.</p>
                         </div>
                     </div>
 
@@ -470,7 +528,7 @@
                         <div class="content">
                             <h5 class="fw-bold">Bachelor of Computer Application (BCA)</h5>
                             <small class="text-muted">2015 – 2018</small>
-                            <p>Built academic projects in Java and React.</p>
+                            <p>Worked on real world projects in Java, React and Python.</p>
                         </div>
                     </div>
 
@@ -524,7 +582,7 @@
                                 </p>
                             </div>
                             <div class="card-footer d-flex justify-content-between align-items-center">
-                                <small class="text-muted">⭐ 0</small>
+                                <small class="text-muted"></small>
                                 <small class="text-muted"><b>Python</b> | Personal Project</small>
                             </div>
                         </div>
@@ -545,7 +603,7 @@
                                 </p>
                             </div>
                             <div class="card-footer d-flex justify-content-between align-items-center">
-                                <small class="text-muted">⭐ 0</small>
+                                <small class="text-muted"></small>
                                 <small class="text-muted"><b>HCL • Shell</b> | Personal Project</small>
                             </div>
                         </div>
@@ -585,13 +643,12 @@
                                     Spring Microservice
                                 </h5>
                                 <p class="card-text">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus ullam iusto dolorum
-                                    non quasi! Libero, praesentium minus similique suscipit repellendus accusantium ipsa
-                                    possimus culpa, repudiandae deleniti architecto. Blanditiis, repellendus ducimus.
+                                    🧩 Spring Cloud microservices app with 🎬 Movie & 🎭 Artist services, 🔐 JWT auth,
+                                    🌐 API Gateway, 🧭 Eureka discovery, and ☸️ Kubernetes deployments using Kustomize.
                                 </p>
                             </div>
                             <div class="card-footer d-flex justify-content-between align-items-center">
-                                <small class="text-muted">⭐ 0</small>
+                                <small class="text-muted"></small>
                                 <small class="text-muted"><b>Java</b> | Personal Project</small>
                             </div>
                         </div>
@@ -613,15 +670,14 @@
                                 </p>
                             </div>
                             <div class="card-footer d-flex justify-content-between align-items-center">
-                                <small class="text-muted">⭐ 0</small>
+                                <small class="text-muted"></small>
                                 <small class="text-muted"><b>React Native</b> | MCA Minor Project</small>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-md-4 mt-4">
-                        <div class="card h-100 shadow-sm clickable-card" onclick="window.open(
-                                'https\://github.com/soumiknandi/MeiChat', '_blank')">
+                        <div class="card h-100 shadow-sm clickable-card">
                             <div class="card-body">
                                 <h5 class="card-title">
                                     AWS Serverless Bulk Mailer
@@ -633,15 +689,14 @@
                                 </p>
                             </div>
                             <div class="card-footer d-flex justify-content-between align-items-center">
-                                <small class="text-muted">⭐ 0</small>
+                                <small class="text-muted"></small>
                                 <small class="text-muted"><b>Lambda • S3 • SES</b> | Personal Project</small>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-md-4 mt-4">
-                        <div class="card h-100 shadow-sm clickable-card" onclick="window.open(
-                                'https\://github.com/soumiknandi/MeiChat', '_blank')">
+                        <div class="card h-100 shadow-sm clickable-card">
                             <div class="card-body">
                                 <h5 class="card-title">
                                     Database Migration — On-Prem to RDS
@@ -652,15 +707,14 @@
                                 </p>
                             </div>
                             <div class="card-footer d-flex justify-content-between align-items-center">
-                                <small class="text-muted">⭐ 0</small>
+                                <small class="text-muted"></small>
                                 <small class="text-muted"><b>RDS • S3 • DMS</b> | Personal Project</small>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-md-4 mt-4">
-                        <div class="card h-100 shadow-sm clickable-card" onclick="window.open(
-                                'https\://github.com/soumiknandi/MeiChat', '_blank')">
+                        <div class="card h-100 shadow-sm clickable-card">
                             <div class="card-body">
                                 <h5 class="card-title">
                                     Containerized App Deployment
@@ -672,7 +726,7 @@
                                 </p>
                             </div>
                             <div class="card-footer d-flex justify-content-between align-items-center">
-                                <small class="text-muted">⭐ 0</small>
+                                <small class="text-muted"></small>
                                 <small class="text-muted"><b>AWS EKS • Terraform • Python</b> | Personal Project</small>
                             </div>
                         </div>
@@ -765,7 +819,7 @@
                             <div class="invalid-feedback">Please enter some message</div>
                         </div>
 
-                        <input type="hidden" name="_next" value="http://localhost/thanks.html">
+                        <input type="hidden" name="_next" value="https://soumiknandi.github.io/thanks.html">
                         <input type="text" name="_honey" style="display:none">
 
                         <div class="d-grid d-block">
@@ -833,9 +887,6 @@
         </div>
     </footer>
 
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js?v=1.0"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 

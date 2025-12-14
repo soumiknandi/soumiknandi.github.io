@@ -36,6 +36,7 @@ const observerCb = (entries, observer) => {
             counters.forEach(counter => {
                 const updateCount = () => {
                     const target = +counter.getAttribute('data-target');
+                    const isPlus = counter.getAttribute('show-plus') === 'true';
                     const count = +counter.innerText;
                     const increment = target / 1300; // adjust speed
 
@@ -43,7 +44,10 @@ const observerCb = (entries, observer) => {
                         counter.innerText = Math.ceil(count + increment);
                         setTimeout(updateCount, 20);
                     } else {
-                        counter.innerText = target + " +";
+                        if (isPlus)
+                            counter.innerText = target + " +";
+                        else
+                            counter.innerText = target;
                     }
                 };
                 updateCount();
@@ -58,7 +62,7 @@ observer.observe(document.getElementById('counter'));
 
 
 
-// Top & bottom navbar 
+// Top & bottom navbar on scroll active link highlighting
 const sections = Array.from(document.getElementsByClassName("scroll-section"));
 const navLinks = Array.from(document.querySelectorAll("#main-navbar .nav-link"));
 const bottomNavLinks = Array.from(document.querySelectorAll("#bottom-nav .nav-link"));
@@ -139,7 +143,7 @@ document.querySelectorAll(".skills-scroll-wrapper").forEach(wrapper => {
 });
 
 
-
+// Dark/Light Theme Toggle
 (function () {
     const THEME_KEY = 'theme';
     const BTN_IDS = ['theme-toggle', 'theme-toggle-mobile'];
