@@ -9,8 +9,7 @@
 
 ## 🧑‍💻 About Me
 
-DevOps-first engineer with **4+ years of experience** designing, building, deploying, and maintaining **enterprise-grade applications**.  
-Strong background in **Java & Spring Boot**, combined with hands-on expertise in **CI/CD automation, containerization, and cloud-native deployments on AWS**.
+I am a **Java Backend Engineer with 4.5+ years of experience** specialized in building scalable, **production-ready microservices and event-driven systems.** My expertise lies at the intersection of high-performance backend development (Java 17, Spring Boot) and cloud-native DevOps (AWS, Kubernetes, Terraform).
 
 I focus on:
 - Automating deployments
@@ -31,12 +30,11 @@ I focus on:
 - Jenkins, GitHub Actions
 - Docker, Kubernetes
 - Terraform, Helm, Ansible, ArgoCD
-- Maven, Nexus
+- Maven
 
 ### ☁️ Cloud & Monitoring
 - AWS: EC2, S3, IAM, RDS, Lambda, CloudWatch
 - Prometheus, Grafana
-- ELK Stack
 
 ### 🧰 Tools & Practices
 - Git, Postman
@@ -44,30 +42,6 @@ I focus on:
 - Agile / Scrum
 - Infrastructure as Code (IaC)
 - Microservices Architecture
-
-<br/>
-
-## 📌 Professional Experience
-
-### **Software Engineer Senior Analyst**  
-**Accenture** | Jun 2025 – Present
-- Led modernization of Spring-based applications by upgrading Java and Spring versions.
-- Designed and implemented CI/CD pipelines using Jenkins and Spinnaker.
-- Deployed applications to **AWS EKS, Linux hosts, and private cloud environments** with zero-downtime strategies.
-- Worked on cloud-native and containerized deployments.
-
-### **Software Engineer Analyst**  
-**Accenture** | Sep 2022 – Jun 2025
-- Migrated multiple Spring applications from Java 8 to Java 11 & 17.
-- Automated deployments and managed CI/CD workflows.
-- Set up Linux environments and supported application migrations across data centers.
-- Contributed to DevOps automation and cloud adoption initiatives.
-
-### **Software Engineer Associate**  
-**Accenture** | Jun 2021 – Sep 2022
-- Developed and maintained Java and Spring-based applications.
-- Debugged production issues and supported batch and API-based systems.
-- Assisted with application deployments and Linux system administration.
 
 <br/>
 
